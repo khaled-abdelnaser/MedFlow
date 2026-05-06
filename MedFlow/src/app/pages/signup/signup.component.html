@@ -1,0 +1,122 @@
+<div class="signup-page">
+
+
+
+  <!-- Left Panel (same as login) -->
+  <div class="signup-left">
+    <div class="signup-brand">
+      <div class="brand-icon">
+        <i class="fa-solid fa-plus"></i>
+      </div>
+      <span class="brand-name">MedFlow</span>
+    </div>
+
+    <div class="signup-hero mt-5">
+      <h1 class="hero-title">Join MedFlow<br>Today.</h1>
+      <p class="hero-sub">
+        Create your account and start managing your health the smart way.
+      </p>
+    </div>
+  </div>
+
+  <!-- Right Panel -->
+  <div class="signup-right">
+      <!-- ALERT GOES HERE -->
+    <app-alert
+        [visible]="alertVisible"
+        [message]="alertMessage"
+        [type]="alertType"
+        (close)="alertVisible = false">
+    </app-alert>
+
+    <div class="signup-card">
+
+      <div class="card-icon">
+        <div class="icon-wrap">
+          <i class="fa-solid fa-user-plus"></i>
+        </div>
+      </div>
+
+      <h2 class="card-title">Create Account</h2>
+      <p class="card-sub">Start your journey with MedFlow</p>
+
+      <!-- Name -->
+      <div class="form-group">
+        <label class="form-label">FULL NAME</label>
+        <input type="text" class="form-input" [(ngModel)]="name" placeholder="Your full name" />
+      </div>
+
+      <!-- Email -->
+      <div class="form-group">
+        <label class="form-label">EMAIL ADDRESS</label>
+        <input type="email" class="form-input" [(ngModel)]="email" placeholder="name@example.com" />
+      </div>
+
+      <!-- Role -->
+      <div class="form-group">
+        <label class="form-label">ACCOUNT TYPE</label>
+        <select class="form-input" [(ngModel)]="role">
+          <option value="patient">Patient</option>
+          <option value="doctor">Doctor</option>
+        </select>
+      </div>
+
+      <!-- Password -->
+      <div class="form-group">
+        <label class="form-label">PASSWORD</label>
+        <div class="input-wrap">
+          <input
+            [type]="showPassword ? 'text' : 'password'"
+            class="form-input"
+            [(ngModel)]="password"
+            placeholder="••••••••"
+          />
+          <button class="toggle-pw" (click)="togglePassword()">
+            <i class="fa-solid" [ngClass]="showPassword ? 'fa-eye-slash' : 'fa-eye'"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Confirm Password -->
+      <div class="form-group">
+        <label class="form-label">CONFIRM PASSWORD</label>
+        <div class="input-wrap">
+          <input
+            [type]="showConfirmPassword ? 'text' : 'password'"
+            class="form-input"
+            [(ngModel)]="confirmPassword"
+            placeholder="••••••••"
+          />
+          <button class="toggle-pw" (click)="toggleConfirmPassword()">
+            <i class="fa-solid" [ngClass]="showConfirmPassword ? 'fa-eye-slash' : 'fa-eye'"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Submit -->
+      <button class="btn-primary signup-btn" (click)="onSignUp()">
+        Create Account
+      </button>
+
+      <!-- Divider -->
+      <div class="divider">
+        <span class="divider-line"></span>
+        <span class="divider-text">OR</span>
+        <span class="divider-line"></span>
+      </div>
+
+      <!-- Google -->
+      <button class="btn-google">
+        <i class="fa-brands fa-google"></i>
+        Continue with Google
+      </button>
+
+      <!-- Login redirect -->
+      <p class="login-prompt">
+        Already have an account?
+        <button class="link-btn" routerLink="/login">Sign in</button>
+      </p>
+
+    </div>
+  </div>
+</div>

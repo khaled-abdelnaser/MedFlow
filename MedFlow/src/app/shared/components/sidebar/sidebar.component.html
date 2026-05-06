@@ -1,0 +1,48 @@
+<aside class="desktop-sidebar">
+
+  <!-- Logo -->
+  <div class="sidebar-logo">
+    <div class="sidebar-logo-icon">
+      <i class="fa-solid fa-plus"></i>
+    </div>
+    <span class="sidebar-logo-text">MedFlow</span>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="sidebar-nav">
+
+    <a routerLink="/home" class="sidebar-nav-item active">
+      <i class="fa-solid fa-house sidebar-nav-icon"></i>
+      Home
+    </a>
+
+    <a routerLink="/appointments" class="sidebar-nav-item">
+      <i class="fa-solid fa-calendar sidebar-nav-icon"></i>
+      Appointments
+    </a>
+
+    <a routerLink="/doctors" class="sidebar-nav-item">
+      <i class="fa-solid fa-magnifying-glass sidebar-nav-icon"></i>
+      Find Doctor
+    </a>
+
+    <a routerLink="/profile" class="sidebar-nav-item">
+      <i class="fa-solid fa-user sidebar-nav-icon"></i>
+      My Profile
+    </a>
+
+  </nav>
+
+  <!-- User -->
+  <div class="sidebar-user">
+    <div class="sidebar-user-avatar">
+      <i class="fa-solid fa-user"></i>
+    </div>
+
+    <div class="sidebar-user-info">
+      <div class="sidebar-user-name">{{ user.name }}</div>
+      <div class="sidebar-user-role">{{ user.role }}</div>
+    </div>
+  </div>
+
+</aside>

@@ -1,0 +1,127 @@
+<div class="app-layout">
+
+  <!-- Sidebar -->
+  <app-sidebar></app-sidebar>
+
+  <!-- Main Content -->
+  <div class="main-content">
+
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+      <div class="header-left">
+        <div class="header-avatar">
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <span class="header-logo">MedFlow</span>
+      </div>
+      <button class="notif-btn">
+        <i class="fa-solid fa-bell"></i>
+      </button>
+    </header>
+
+    <!-- Scrollable Page -->
+    <div class="page-content">
+
+      <!-- Desktop Top Bar -->
+      <div class="desktop-topbar">
+        <div class="topbar-greeting">
+          <span class="topbar-sub">Good morning,</span>
+          <h1 class="topbar-name">Ahmed</h1>
+        </div>
+
+        <div class="topbar-actions">
+          <button class="topbar-notif">
+            <i class="fa-solid fa-bell"></i>
+          </button>
+          <button class="topbar-notif" (click)="navigateToProfile()">
+            <i class="fa-solid fa-user"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Hero -->
+      <div class="hero-banner">
+        <p class="hero-greeting">Good morning,</p>
+        <h2 class="hero-name">Ahmed</h2>
+        <p class="hero-date">{{ today }}</p>
+      </div>
+
+      <!-- Content -->
+      <div class="content-wrap">
+
+        <!-- Appointments -->
+        <section class="section">
+          <h3 class="section-title">Upcoming Appointments</h3>
+
+          <div class="appointments-list">
+            <div
+              class="appointment-card card"
+              *ngFor="let appt of upcomingAppointments"
+              (click)="navigateToDoctor(appt.id)"
+            >
+              <div class="appt-avatar">{{ appt.avatar }}</div>
+
+              <div class="appt-info">
+                <div class="appt-name">{{ appt.doctor }}</div>
+                <div class="appt-meta">
+                  {{ appt.specialty }} • {{ appt.time }}
+                </div>
+              </div>
+
+              <i class="fa-solid fa-chevron-right appt-arrow"></i>
+            </div>
+          </div>
+        </section>
+
+        <!-- Quick Actions -->
+        <section class="section">
+          <h3 class="section-title">Quick Actions</h3>
+
+          <div class="quick-actions-grid">
+            <button class="quick-action-btn" (click)="navigateToDoctor(1)">
+              <div class="qa-icon"><i class="fa-solid fa-calendar"></i></div>
+              <span>Book Visit</span>
+            </button>
+
+            <button class="quick-action-btn" (click)="navigateToProfile()">
+              <div class="qa-icon"><i class="fa-solid fa-user"></i></div>
+              <span>My Profile</span>
+            </button>
+
+            <button class="quick-action-btn" (click)="navigateToDoctor(1)">
+              <div class="qa-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+              <span>Find Doctor</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- Doctors -->
+        <section class="section desktop-only-section">
+          <h3 class="section-title">Top Specialists</h3>
+
+          <div class="doctors-grid">
+            <div
+              class="doctor-card card"
+              *ngFor="let doc of doctors"
+              (click)="navigateToDoctor(doc.id)"
+            >
+              <div class="doc-avatar">{{ doc.avatar }}</div>
+
+              <div class="doc-info">
+                <div class="doc-name">{{ doc.name }}</div>
+                <div class="doc-spec">{{ doc.specialty }}</div>
+                <div class="doc-meta">
+                  ⭐ {{ doc.rating }} • {{ doc.experience }} yrs
+                </div>
+              </div>
+
+              <div class="doc-fee">${{ doc.consultationFee }}</div>
+            </div>
+          </div>
+        </section>
+
+    <!-- Mobile Bottom Navbar -->
+    <app-navbar activePage="home"></app-navbar>
+
+  </div>
+</div>

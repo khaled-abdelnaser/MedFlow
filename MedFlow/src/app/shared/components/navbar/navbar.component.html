@@ -1,0 +1,39 @@
+<nav class="bottom-nav">
+
+  <a routerLink="/home"
+     class="bottom-nav-item"
+     [class.active]="activePage === 'home'">
+    <div class="nav-icon-wrap">
+      <i class="fa-solid fa-house"></i>
+    </div>
+    <span>Home</span>
+  </a>
+
+  <a routerLink="/appointments"
+     class="bottom-nav-item"
+     [class.active]="activePage === 'appointments'">
+    <div class="nav-icon-wrap">
+      <i class="fa-solid fa-calendar"></i>
+    </div>
+    <span>Appointments</span>
+  </a>
+
+  <a routerLink="/search"
+     class="bottom-nav-item"
+     [class.active]="activePage === 'search'">
+    <div class="nav-icon-wrap">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    <span>Search</span>
+  </a>
+
+  <a routerLink="/profile"
+     class="bottom-nav-item"
+     [class.active]="activePage === 'profile'">
+    <div class="nav-icon-wrap">
+      <i class="fa-solid fa-user"></i>
+    </div>
+    <span>Profile</span>
+  </a>
+
+</nav>

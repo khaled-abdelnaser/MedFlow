@@ -1,0 +1,13 @@
+<div class="alert" *ngIf="visible" [ngClass]="type">
+
+  <div class="alert-content">
+    <i class="fa-solid" [ngClass]="icon"></i>
+
+    <span class="message">{{ message }}</span>
+  </div>
+
+  <button class="close-btn" (click)="closed()">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+
+</div>
